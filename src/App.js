@@ -6,8 +6,10 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import ProjectList from "./components/ProjectList";
 import TodoList from "./components/TodoList";
+import UserProjectList from "./components/UserProject";
 import axios from "axios";
 import {HashRouter, BrowserRouter, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom'
+import UserProject from "./components/UserProject";
 
 
 const NotFound = () => {
@@ -75,6 +77,7 @@ class App extends React.Component {
                        <Route exact path='/' element = {<UserList users={this.state.users} />} />
                        <Route exact path='/projects' element = {<ProjectList project={this.state.projects} />} />
                        <Route exact path='/todo' element = {<TodoList todo={this.state.todo}/>} />
+                       <Route path='/user/:id' element = {<UserProjectList projects={this.state.projects} />} />
                        {/*<Route exact path='/footer' Footer />*/}
                        <Route path="*" element = {<NotFound />} />
                    </Routes>

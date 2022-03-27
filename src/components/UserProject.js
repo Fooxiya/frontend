@@ -28,7 +28,7 @@ const UserProjectList = ({projects}) => {
             <th>
                 Link
             </th>
-            {filteredProjects.map((book) => <ProjectItem project={project} />)}
+            {filteredProjects.map((project) => <ProjectItem project={project} />)}
         </table>
     )
 }
